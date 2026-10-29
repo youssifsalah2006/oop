@@ -66,3 +66,70 @@ public class JavaApplication14 {
     }
 }
 
+
+
+
+
+
+
+
+
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+package javaapplication15;
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author STUDENT
+ */
+public class JavaApplication15 {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+       Scanner S = new Scanner (System.in);
+       String[][] students =new String [3][2];
+       System.out.println ("Enter name and grade of 3 students:");
+       for (int i = 0; i<3; i++){
+           students[i][0]= S.next();
+           students[i][1]= S.next();
+             
+       }
+        for (int i = 0; i<3; i++){
+              System.out.println(
+              students[i][0].concat(":")
+                      .concat(students[i][1]));
+              
+                    
+              
+        }
+        int countA =0;
+        for (int i =0; i < 3; i++){
+            if (students [i][1].equalsIgnoreCase ("A")){
+                
+            }
+        }
+        System.out.println ("students with grade A:"+ countA);
+        
+         System.out.println ("Enter prefix:");
+         String prefix = S.next();
+         int countprefix = 0;
+         for (int i =0 ; i <3; i++){
+                if (students [i][1].startsWith (prefix)){
+                    countprefix++;
+                }
+         }
+         
+         
+          System.out.println ("Names starting with"+ prefix +":"+ countprefix);
+        
+    }
+    
+}
