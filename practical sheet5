@@ -1,1 +1,68 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+package javaapplication14;
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author STUDENT
+ */
+public class JavaApplication14 {
+
+    /**
+     * @param args the command line arguments
+     */
+   public static int generateSecret() {
+        return (int) (Math.random() * 50) + 1;
+    }
+
+    public static String checkGuess(int guess, int secret) {
+        if (guess == secret) {
+            return "Correct";
+        } else if (guess < secret) {
+            return "Higher";
+        } else {
+            return "Lower";
+        }
+    }
+
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+
+        int secret = generateSecret();
+        int[] guesses = new int[5];
+        int attempts = 0;
+        boolean correct = false;
+
+        System.out.println("Secret Number (" + secret + ")");
+
+        
+        for (int i = 0; i < 5; i++) {
+            System.out.print("Guess: ");
+            guesses[i] = input.nextInt();
+            attempts++;
+
+            String result = checkGuess(guesses[i], secret);
+            System.out.println(result);
+
+            if (result.equals("Correct")) {
+                correct = true;
+                System.out.println("Correct in " + attempts + " attempts");
+                break;
+            }
+        }
+
+        
+        if (!correct) {
+            System.out.println("Out of attempts! The secret number was " + secret);
+        }
+
+     
+    }
+}
 
